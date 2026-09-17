@@ -7,14 +7,112 @@
   <title>KINGDOM — Technology & Solutions</title>
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
- 
+  <style>
+    #contato {
+      background-color: #0b0e14;
+      color: #ffffff;
+      padding: 5rem 1.5rem;
+    }
+    #contato .section-head {
+      text-align: center;
+      max-width: 700px;
+      margin: 0 auto 3rem auto;
+    }
+    #contato .section-head h2 {
+      font-size: 2rem;
+      color: #ffffff;
+      margin-bottom: 0.75rem;
+    }
+    #contato .section-head p {
+      color: #9ca3af;
+      font-size: 1rem;
+      line-height: 1.6;
+    }
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1.2fr;
+      gap: 2.5rem;
+      max-width: 1100px;
+      margin: 0 auto;
+      align-items: start;
+    }
+    @media (max-width: 768px) {
+      .contact-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+    .contact-info {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+    .info-item {
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 8px;
+      padding: 1.25rem 1.5rem;
+      display: flex;
+      align-items: center;
+      gap: 1.25rem;
+    }
+    .info-item i {
+      color: #80c342;
+      font-size: 1.25rem;
+      width: 24px;
+      text-align: center;
+    }
+    .info-item h4 {
+      margin: 0 0 0.25rem 0;
+      font-size: 1rem;
+      color: #ffffff;
+      font-weight: 600;
+    }
+    .info-item p {
+      margin: 0;
+      color: #9ca3af;
+      font-size: 0.95rem;
+    }
+    .form-group {
+      margin-bottom: 1.25rem;
+      display: flex;
+      flex-direction: column;
+      text-align: left;
+    }
+    .form-group label {
+      font-size: 0.9rem;
+      color: #9ca3af;
+      margin-bottom: 0.5rem;
+    }
+    .form-group input,
+    .form-group textarea {
+      width: 100%;
+      background: #131927;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 6px;
+      padding: 0.85rem 1rem;
+      color: #ffffff;
+      font-family: inherit;
+      font-size: 0.95rem;
+      box-sizing: border-box;
+      outline: none;
+      transition: border-color 0.2s;
+    }
+    .form-group input:focus,
+    .form-group textarea:focus {
+      border-color: #80c342;
+      background: #172033;
+    }
+    .form-group textarea {
+      resize: vertical;
+    }
+  </style>
 </head>
 <body>
 <header class="header">
   <div class="container nav">
-    <a class="brand" href="index.html" aria-label="KINGDOM Home">
-      <span class="symbol" aria-hidden="true"><i></i><i></i><i></i></span>
-      <span class="wordmark">KINGDOM</span><small>TECHNOLOGY &amp; SOLUTIONS</small>
+    <!-- LOGO ATUALIZADA AQUI -->
+    <a class="brand" href="index.html" aria-label="KINGDOM Home" style="display: flex; align-items: center;">
+      <img src="Logo atualizada.png" alt="KINGDOM Solutions" style="max-height: 80px; width: auto;">
     </a>
     <button class="menu" aria-label="Abrir menu" aria-expanded="false"><span></span><span></span><span></span></button>
     <nav class="links" aria-label="Navegação principal">
@@ -32,7 +130,7 @@
       <div class="hero-copy reveal">
         <p class="kicker">TECNOLOGIA B2B APLICADA À INDÚSTRIA</p>
         <h1>Entender a indústria.<br><em>Construir soluções.</em></h1>
-        <p class="lead">Identificamos gargalos e desenvolvemos a tecnologia necessária para resolvê-los.</p>
+        <p class="lead">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Identificamos gargalos e desenvolvemos a tecnologia necessária para resolvê-los.</p>
         <div class="actions">
           <a class="button button-accent" href="#solucoes">Conheça nossas soluções <b>↗</b></a>
           <a class="button button-outline" href="quem-somos.html">Quem somos</a>
@@ -62,7 +160,7 @@
       <div class="reveal">
         <p class="kicker">QUEM SOMOS</p>
         <h2>Tecnologia construída a partir do <em>problema real.</em></h2>
-        <p class="copy">A KINGDOM identifica problemas e gargalos presentes na operação do cliente e desenvolve soluções tecnológicas adequadas à necessidade encontrada.</p>
+        <p class="copy">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. A KINGDOM identifica problemas e gargalos presentes na operação do cliente e desenvolve soluções tecnológicas adequadas à necessidade encontrada.</p>
         <p class="copy">A solução deve se adaptar ao problema, e não o problema ao software.</p>
         <div class="stats">
           <div><b>+00</b><span>Projetos</span></div>
@@ -81,7 +179,7 @@
           <p class="kicker">SOLUÇÕES</p>
           <h2>Construímos tecnologia<br><em>sob medida.</em></h2>
         </div>
-        <p>Soluções desenvolvidas de acordo com cada desafio operacional.</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Soluções desenvolvidas de acordo com cada desafio operacional.</p>
       </div>
       <div class="cards">
         <article class="card reveal"><span>01</span><i>⌁</i><h3>Automação e processos</h3><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><a href="#contato">Saiba mais ↗</a></article>
@@ -97,7 +195,7 @@
       <div class="reveal">
         <p class="kicker">NOSSO MÉTODO</p>
         <h2>Entender.<br>Estruturar.<br><em>Resolver.</em></h2>
-        <p class="copy dark-copy">Nossa abordagem combina compreensão, estratégia, engenharia e resultado.</p>
+        <p class="copy dark-copy">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nossa abordagem combina compreensão, estratégia, engenharia e resultado.</p>
       </div>
       <div class="steps reveal">
         <div><b>01</b><h3>Compreensão</h3><p>Conhecer antes de construir.</p></div>
@@ -135,7 +233,7 @@
             <i class="fa-solid fa-location-dot" aria-hidden="true"></i>
             <div>
               <h4>Sede</h4>
-              <p>Luziânia, GO</p>
+              <p>Av. Paulista, 1000 - São Paulo, SP</p>
             </div>
           </div>
         </div>
@@ -167,10 +265,10 @@
 <footer class="footer">
   <div class="container footer-grid">
     <div>
+      <!-- LOGO ATUALIZADA AQUI NO RODAPÉ -->
       <div class="footer-logo">
-        <i class="fa-solid fa-crown" aria-hidden="true"></i> <strong>KINGDOM</strong>
+        <img src="Logo atualizada.png" alt="KINGDOM Solutions" style="max-height: 80px; width: auto; margin-bottom: 10px;">
       </div>
-      <p>Technology &amp; Solutions</p>
     </div>
     <div>
       <h4>Navegação</h4>
