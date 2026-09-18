@@ -268,7 +268,7 @@ a {
 /* ===== Hero ===== */
 .hero {
     min-height: 680px;
-    padding-top: 70px;
+    padding-top: 0px;
     background: var(--bg);
     color: #fff;
     position: relative;
@@ -277,7 +277,7 @@ a {
 
 @media(min-width:681px) {
     .hero {
-        padding-top: 82px
+        padding-top: 32px
     }
 }
 
@@ -468,7 +468,7 @@ a {
 
 .scroll {
     position: absolute;
-    bottom: 22px;
+    bottom: 140px;
     left: 50%;
     transform: translateX(-50%);
     font-size: 9px;
