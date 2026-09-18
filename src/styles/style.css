@@ -114,14 +114,15 @@ a {
 
 .brand small {
     display: none;
-    font-size: 7px;
+    font-size: 8px;
     letter-spacing: .18em;
     color: #969d9a
 }
 
 @media(min-width:681px) {
     .brand small {
-        display: block
+        display: block;
+        font-size:8px;
     }
 }
 
@@ -268,7 +269,7 @@ a {
 /* ===== Hero ===== */
 .hero {
     min-height: 680px;
-    padding-top: 0px;
+    padding-top: 3px;
     background: var(--bg);
     color: #fff;
     position: relative;
@@ -468,12 +469,17 @@ a {
 
 .scroll {
     position: absolute;
-    bottom: 140px;
+    bottom: 90px;
     left: 50%;
     transform: translateX(-50%);
     font-size: 9px;
     letter-spacing: .2em;
     color: #747b78
+}
+@media(min-width:951px) {
+    .scroll {
+        bottom: 140px
+    }
 }
 
 .scroll span {
