@@ -1,3 +1,13 @@
+/*
+ * KINGDOM Technology & Solutions — style.css
+ *
+ * Metodologia: MOBILE-FIRST.
+ * As regras sem @media são a base para telas de celular.
+ * @media(min-width:681px)  -> ajustes para tablet/notebook.
+ * @media(min-width:951px)  -> ajustes para desktop grande.
+ * Cada tier só redeclara o que MUDA em relação ao tier anterior.
+ */
+
 :root {
     --bg: #0b0d0f;
     --bg2: #111518;
@@ -34,12 +44,19 @@ a {
 }
 
 .container {
-    width: min(calc(100% - 48px), var(--max));
+    width: min(calc(100% - 32px), var(--max));
     margin: auto
 }
 
+@media(min-width:681px) {
+    .container {
+        width: min(calc(100% - 48px), var(--max))
+    }
+}
+
+/* ===== Header / navegação ===== */
 .header {
-    height: 82px;
+    height: 70px;
     position: fixed;
     z-index: 20;
     inset: 0 0 auto;
@@ -47,6 +64,12 @@ a {
     backdrop-filter: blur(14px);
     border-bottom: 1px solid #24282a;
     color: #fff
+}
+
+@media(min-width:681px) {
+    .header {
+        height: 82px
+    }
 }
 
 .nav {
@@ -58,42 +81,28 @@ a {
 
 .brand {
     display: grid;
-    grid-template-columns: 27px auto;
+    grid-template-columns: auto auto;
     grid-template-rows: auto auto;
     column-gap: 10px;
     align-items: center
 }
 
-.symbol {
-    width: 27px;
-    height: 27px;
-    position: relative;
-    grid-row: 1/3
+/* Marca (logotipo real) — substitui o antigo ícone desenhado em CSS */
+.brand-mark {
+    grid-row: 1/3;
+    display: block;
+    width: 34px;
+    height: auto
 }
 
-.symbol i {
-    position: absolute;
-    width: 15px;
-    height: 15px;
-    border: 3px solid var(--green);
-    transform: rotate(30deg)
+@media(min-width:951px) {
+    .brand-mark {
+        width: 38px
+    }
 }
 
-.symbol i:nth-child(1) {
-    left: 0;
-    top: 6px
-}
-
-.symbol i:nth-child(2) {
-    left: 10px;
-    top: 0;
-    opacity: .7
-}
-
-.symbol i:nth-child(3) {
-    left: 10px;
-    top: 12px;
-    opacity: .4
+.footer-brand .brand-mark {
+    width: 42px
 }
 
 .wordmark {
@@ -104,21 +113,39 @@ a {
 }
 
 .brand small {
+    display: none;
     font-size: 7px;
     letter-spacing: .18em;
     color: #969d9a
 }
 
+@media(min-width:681px) {
+    .brand small {
+        display: block
+    }
+}
+
 .links {
-    display: flex;
-    gap: 38px;
-    margin-left: auto
+    display: none;
+    position: absolute;
+    top: 70px;
+    left: 16px;
+    right: 16px;
+    background: #111518;
+    border: 1px solid #2b3031;
+    padding: 8px;
+    flex-direction: column;
+    gap: 0
+}
+
+.links.open {
+    display: flex
 }
 
 .links a {
     font-size: 13px;
     color: #aeb4b2;
-    padding: 31px 0;
+    padding: 14px;
     position: relative
 }
 
@@ -132,9 +159,40 @@ a {
     height: 2px;
     background: var(--green);
     position: absolute;
-    left: 0;
-    right: 0;
-    bottom: 23px
+    bottom: 7px;
+    left: 14px;
+    right: auto;
+    width: 30px
+}
+
+@media(min-width:681px) {
+    .links {
+        display: flex;
+        position: static;
+        flex-direction: row;
+        gap: 20px;
+        background: none;
+        border: 0;
+        padding: 0;
+        margin-left: auto
+    }
+
+    .links a {
+        padding: 31px 0
+    }
+
+    .links a.active:after {
+        bottom: 23px;
+        left: 0;
+        right: 0;
+        width: auto
+    }
+}
+
+@media(min-width:951px) {
+    .links {
+        gap: 38px
+    }
 }
 
 .button {
@@ -176,11 +234,27 @@ a {
     color: var(--ink)
 }
 
+.header-button {
+    display: none
+}
+
+@media(min-width:681px) {
+    .header-button {
+        display: inline-flex
+    }
+}
+
 .menu {
-    display: none;
+    display: block;
     margin-left: auto;
     background: none;
     border: 0
+}
+
+@media(min-width:681px) {
+    .menu {
+        display: none
+    }
 }
 
 .menu span {
@@ -191,13 +265,26 @@ a {
     margin: 5px
 }
 
+/* ===== Hero ===== */
 .hero {
-    min-height: 760px;
-    padding-top: 82px;
+    min-height: 680px;
+    padding-top: 70px;
     background: var(--bg);
     color: #fff;
     position: relative;
     overflow: hidden
+}
+
+@media(min-width:681px) {
+    .hero {
+        padding-top: 82px
+    }
+}
+
+@media(min-width:951px) {
+    .hero {
+        min-height: 760px
+    }
 }
 
 .hero:before {
@@ -216,11 +303,18 @@ a {
 }
 
 .hero-layout {
-    min-height: 678px;
+    min-height: 598px;
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr;
     align-items: center;
     position: relative
+}
+
+@media(min-width:951px) {
+    .hero-layout {
+        min-height: 678px;
+        grid-template-columns: 1fr 1fr
+    }
 }
 
 .kicker {
@@ -228,14 +322,22 @@ a {
     letter-spacing: .21em;
     color: var(--green);
     font-weight: 800;
-    margin-bottom: 15px
+    margin-bottom: 15px;
 }
 
 .hero h1,
 .inner-hero h1 {
-    font-size: clamp(48px, 5.4vw, 78px);
+    font-size: 48px;
     line-height: 1;
     letter-spacing: -.045em
+}
+
+@media(min-width:681px) {
+
+    .hero h1,
+    .inner-hero h1 {
+        font-size: clamp(48px, 5.4vw, 78px)
+    }
 }
 
 .hero .lead {
@@ -251,9 +353,26 @@ a {
     flex-wrap: wrap
 }
 
+.actions .button {
+    width: 100%
+}
+
+@media(min-width:681px) {
+    .actions .button {
+        width: auto
+    }
+}
+
 .hero-art {
     height: 550px;
-    position: relative
+    position: relative;
+    display: none
+}
+
+@media(min-width:951px) {
+    .hero-art {
+        display: block
+    }
 }
 
 .core {
@@ -362,22 +481,41 @@ a {
     margin-left: 8px
 }
 
+/* ===== Seções gerais ===== */
 .section {
-    padding: 120px 0
+    padding: 78px 0
+}
+
+@media(min-width:681px) {
+    .section {
+        padding: 120px 0
+    }
 }
 
 .split {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr;
     gap: 100px;
     align-items: center
 }
 
+@media(min-width:951px) {
+    .split {
+        grid-template-columns: 1fr 1fr
+    }
+}
+
 .diagram {
-    height: 460px;
+    height: 330px;
     background: var(--bg);
     position: relative;
     overflow: hidden
+}
+
+@media(min-width:681px) {
+    .diagram {
+        height: 460px
+    }
 }
 
 .diagram>span {
@@ -449,15 +587,27 @@ a {
 
 .stats {
     display: flex;
-    gap: 45px;
+    gap: 20px;
     border-top: 1px solid var(--line);
     margin-top: 36px;
     padding-top: 22px
 }
 
+@media(min-width:681px) {
+    .stats {
+        gap: 45px
+    }
+}
+
 .stats b {
     display: block;
-    font-size: 31px
+    font-size: 25px
+}
+
+@media(min-width:681px) {
+    .stats b {
+        font-size: 31px
+    }
 }
 
 .stats span {
@@ -482,23 +632,46 @@ a {
 }
 
 .section-head {
-    display: flex;
-    justify-content: space-between;
-    align-items: end;
-    gap: 60px;
+    display: block;
     margin-bottom: 48px
 }
 
 .section-head>p {
     max-width: 430px;
     color: var(--muted);
-    font-size: 14px
+    font-size: 14px;
+    margin-top: 20px
+}
+
+@media(min-width:951px) {
+    .section-head {
+        display: flex;
+        justify-content: space-between;
+        align-items: end;
+        gap: 60px
+    }
+
+    .section-head>p {
+        margin-top: 0
+    }
 }
 
 .cards {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: 1fr;
     gap: 14px
+}
+
+@media(min-width:681px) {
+    .cards {
+        grid-template-columns: repeat(2, 1fr)
+    }
+}
+
+@media(min-width:951px) {
+    .cards {
+        grid-template-columns: repeat(4, 1fr)
+    }
 }
 
 .card {
@@ -561,8 +734,14 @@ a {
 
 .method-grid {
     display: grid;
-    grid-template-columns: .9fr 1.1fr;
+    grid-template-columns: 1fr;
     gap: 120px
+}
+
+@media(min-width:951px) {
+    .method-grid {
+        grid-template-columns: .9fr 1.1fr
+    }
 }
 
 .dark-copy {
@@ -597,16 +776,23 @@ a {
     margin-top: 4px
 }
 
+/* ===== CTA ===== */
 .cta {
     padding: 76px 0;
     background: var(--green)
 }
 
 .cta-inner {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 40px
+    display: block
+}
+
+@media(min-width:681px) {
+    .cta-inner {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 40px
+    }
 }
 
 .cta .kicker {
@@ -619,6 +805,17 @@ a {
     letter-spacing: -.04em
 }
 
+.cta .button {
+    margin-top: 25px
+}
+
+@media(min-width:681px) {
+    .cta .button {
+        margin-top: 0
+    }
+}
+
+/* ===== Rodapé ===== */
 .footer {
     background: #080a0c;
     color: #fff;
@@ -627,9 +824,21 @@ a {
 
 .footer-grid {
     display: grid;
-    grid-template-columns: 1.5fr 1fr 1.3fr .7fr;
+    grid-template-columns: 1fr;
     gap: 45px;
     padding-bottom: 55px
+}
+
+@media(min-width:681px) {
+    .footer-grid {
+        grid-template-columns: 1fr 1fr
+    }
+}
+
+@media(min-width:951px) {
+    .footer-grid {
+        grid-template-columns: 1.5fr 1fr 1.3fr .7fr
+    }
 }
 
 .footer-brand {
@@ -690,28 +899,64 @@ a {
 .footer-bottom {
     border-top: 1px solid #202426;
     padding: 19px 0;
-    display: flex;
-    justify-content: space-between;
+    display: block;
     color: #626a67;
     font-size: 10px
 }
 
+.footer-bottom span {
+    display: block
+}
+
+.footer-bottom span+span {
+    margin-top: 8px
+}
+
+@media(min-width:681px) {
+    .footer-bottom {
+        display: flex;
+        justify-content: space-between
+    }
+
+    .footer-bottom span {
+        display: inline
+    }
+
+    .footer-bottom span+span {
+        margin-top: 0
+    }
+}
+
+/* ===== Página "Quem somos" ===== */
 .inner-hero {
     background: var(--bg);
     color: #fff;
-    padding: 190px 0 110px;
+    padding: 150px 0 85px;
     position: relative;
     overflow: hidden
+}
+
+@media(min-width:681px) {
+    .inner-hero {
+        padding: 190px 0 110px
+    }
 }
 
 .inner-hero:after {
     content: "K";
     position: absolute;
     right: 7%;
-    top: 60px;
-    font-size: 420px;
+    top: 100px;
+    font-size: 260px;
     color: #8bc53f08;
     font-weight: 800
+}
+
+@media(min-width:681px) {
+    .inner-hero:after {
+        top: 60px;
+        font-size: 420px
+    }
 }
 
 .inner-hero .container {
@@ -731,18 +976,62 @@ a {
 
 .pillar-grid {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: 1fr;
     border-top: 1px solid #d2d5d0
+}
+
+@media(min-width:681px) {
+    .pillar-grid {
+        grid-template-columns: repeat(2, 1fr)
+    }
+}
+
+@media(min-width:951px) {
+    .pillar-grid {
+        grid-template-columns: repeat(4, 1fr)
+    }
 }
 
 .pillar {
     padding: 30px;
-    border-right: 1px solid #d2d5d0;
-    min-height: 220px
+    min-height: 220px;
+    border-bottom: 1px solid #d2d5d0
 }
 
 .pillar:last-child {
-    border: 0
+    border-bottom: 0
+}
+
+@media(min-width:681px) {
+    .pillar {
+        border-right: 1px solid #d2d5d0
+    }
+
+    .pillar:nth-child(2n) {
+        border-right: 0
+    }
+
+    .pillar:nth-child(-n+2) {
+        border-bottom: 1px solid #d2d5d0
+    }
+
+    .pillar:nth-child(n+3) {
+        border-bottom: 0
+    }
+}
+
+@media(min-width:951px) {
+    .pillar {
+        border-bottom: 0
+    }
+
+    .pillar:nth-child(2n) {
+        border-right: 1px solid #d2d5d0
+    }
+
+    .pillar:last-child {
+        border-right: 0
+    }
 }
 
 .pillar>b {
@@ -795,224 +1084,50 @@ a {
     transform: none
 }
 
-@media(max-width:950px) {
-    .links {
-        gap: 20px
-    }
-
-    .hero-layout,
-    .split,
-    .method-grid {
-        grid-template-columns: 1fr
-    }
-
-    .hero-art {
-        display: none
-    }
-
-    .hero {
-        min-height: 680px
-    }
-
-    .hero-layout {
-        min-height: 598px
-    }
-
-    .cards {
-        grid-template-columns: repeat(2, 1fr)
-    }
-
-    .pillar-grid {
-        grid-template-columns: repeat(2, 1fr)
-    }
-
-    .pillar:nth-child(2) {
-        border-right: 0
-    }
-
-    .pillar:nth-child(-n+2) {
-        border-bottom: 1px solid #d2d5d0
-    }
-
-    .footer-grid {
-        grid-template-columns: 1fr 1fr
-    }
-
-    .section-head {
-        display: block
-    }
-
-    .section-head>p {
-        margin-top: 20px
-    }
-}
-
-@media(max-width:680px) {
-    .container {
-        width: min(calc(100% - 32px), var(--max))
-    }
-
-    .header {
-        height: 70px
-    }
-
-    .brand small {
-        display: none
-    }
-
-    .header-button {
-        display: none
-    }
-
-    .menu {
-        display: block
-    }
-
-    .links {
-        display: none;
-        position: absolute;
-        top: 70px;
-        left: 16px;
-        right: 16px;
-        background: #111518;
-        border: 1px solid #2b3031;
-        padding: 8px;
-        flex-direction: column;
-        gap: 0
-    }
-
-    .links.open {
-        display: flex
-    }
-
-    .links a {
-        padding: 14px
-    }
-
-    .links a.active:after {
-        bottom: 7px;
-        left: 14px;
-        right: auto;
-        width: 30px
-    }
-
-    .hero {
-        padding-top: 70px
-    }
-
-    .hero h1,
-    .inner-hero h1 {
-        font-size: 48px
-    }
-
-    .actions .button {
-        width: 100%
-    }
-
-    .section {
-        padding: 78px 0
-    }
-
-    .diagram {
-        height: 330px
-    }
-
-    .stats {
-        gap: 20px
-    }
-
-    .stats b {
-        font-size: 25px
-    }
-
-    .cards,
-    .pillar-grid,
-    .footer-grid {
-        grid-template-columns: 1fr
-    }
-
-    .pillar {
-        border-right: 0 !important;
-        border-bottom: 1px solid #d2d5d0
-    }
-
-    .pillar:last-child {
-        border-bottom: 0
-    }
-
-    .footer-bottom {
-        display: block
-    }
-
-    .footer-bottom span {
-        display: block
-    }
-
-    .footer-bottom span+span {
-        margin-top: 8px
-    }
-
-    .cta-inner {
-        display: block
-    }
-
-    .cta .button {
-        margin-top: 25px
-    }
-
-    .inner-hero {
-        padding: 150px 0 85px
-    }
-
-    .inner-hero:after {
-        font-size: 260px;
-        top: 100px
-    }
-}
-
+/* ===== Seção de contato (index.html) ===== */
 #contato {
     background-color: #0b0e14;
     color: #ffffff;
-    padding: 5rem 1.5rem;
+    padding: 5rem 1.5rem
 }
 
 #contato .section-head {
     text-align: center;
     max-width: 700px;
-    margin: 0 auto 3rem auto;
+    margin: 0 auto 3rem auto
 }
 
 #contato .section-head h2 {
     font-size: 2rem;
     color: #ffffff;
-    margin-bottom: 0.75rem;
+    margin-bottom: 0.75rem
 }
 
 #contato .section-head p {
     color: #9ca3af;
     font-size: 1rem;
-    line-height: 1.6;
+    line-height: 1.6
 }
 
 .contact-grid {
     display: grid;
-    grid-template-columns: 1fr 1.2fr;
+    grid-template-columns: 1fr;
     gap: 2.5rem;
     max-width: 1100px;
     margin: 0 auto;
-    align-items: start;
+    align-items: start
 }
 
-@media (max-width: 768px) {
+@media(min-width:681px) {
     .contact-grid {
-        grid-template-columns: 1fr;
+        grid-template-columns: 1fr 1.2fr
     }
 }
 
 .contact-info {
     display: flex;
     flex-direction: column;
-    gap: 1rem;
+    gap: 1rem
 }
 
 .info-item {
@@ -1022,40 +1137,40 @@ a {
     padding: 1.25rem 1.5rem;
     display: flex;
     align-items: center;
-    gap: 1.25rem;
+    gap: 1.25rem
 }
 
 .info-item i {
     color: #80c342;
     font-size: 1.25rem;
     width: 24px;
-    text-align: center;
+    text-align: center
 }
 
 .info-item h4 {
     margin: 0 0 0.25rem 0;
     font-size: 1rem;
     color: #ffffff;
-    font-weight: 600;
+    font-weight: 600
 }
 
 .info-item p {
     margin: 0;
     color: #9ca3af;
-    font-size: 0.95rem;
+    font-size: 0.95rem
 }
 
 .form-group {
     margin-bottom: 1.25rem;
     display: flex;
     flex-direction: column;
-    text-align: left;
+    text-align: left
 }
 
 .form-group label {
     font-size: 0.9rem;
     color: #9ca3af;
-    margin-bottom: 0.5rem;
+    margin-bottom: 0.5rem
 }
 
 .form-group input,
@@ -1070,15 +1185,15 @@ a {
     font-size: 0.95rem;
     box-sizing: border-box;
     outline: none;
-    transition: border-color 0.2s;
+    transition: border-color 0.2s
 }
 
 .form-group input:focus,
 .form-group textarea:focus {
     border-color: #80c342;
-    background: #172033;
+    background: #172033
 }
 
 .form-group textarea {
-    resize: vertical;
+    resize: vertical
 }

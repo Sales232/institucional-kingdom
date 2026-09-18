@@ -2,21 +2,60 @@
 <html lang="pt-BR">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <meta name="description" content="KINGDOM Technology & Solutions — tecnologia B2B aplicada à indústria.">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>KINGDOM — Technology & Solutions</title>
+  <meta name="description" content="KINGDOM Technology & Solutions — tecnologia B2B aplicada à indústria. Identificamos gargalos operacionais e desenvolvemos soluções sob medida em automação, plataformas digitais e dados.">
+  <meta name="robots" content="index, follow">
+  <meta name="theme-color" content="#0b0d0f">
+  <!-- TODO: confirmar o domínio final de produção antes de publicar e trocar os placeholders abaixo -->
+  <link rel="canonical" href="https://www.kingdom.com.br/index.html">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="pt_BR">
+  <meta property="og:site_name" content="KINGDOM Technology & Solutions">
+  <meta property="og:title" content="KINGDOM — Technology & Solutions">
+  <meta property="og:description" content="Tecnologia B2B aplicada à indústria: automação, plataformas digitais, dados e soluções sob medida.">
+  <meta property="og:url" content="https://www.kingdom.com.br/index.html">
+  <!-- Imagem provisória (240×251) — recomenda-se produzir uma arte 1200×630 dedicada para compartilhamento social -->
+  <meta property="og:image" content="https://www.kingdom.com.br/src/resources/img/logotipo.png">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="KINGDOM — Technology & Solutions">
+  <meta name="twitter:description" content="Tecnologia B2B aplicada à indústria: automação, plataformas digitais, dados e soluções sob medida.">
+
+  <link rel="icon" type="image/png" href="src/resources/img/logotipo.png" sizes="32x32">
+  <link rel="apple-touch-icon" href="src/resources/img/apple-touch-icon.png">
+
+  <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
   <link rel="stylesheet" href="src/styles/style.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "KINGDOM Technology & Solutions",
+    "description": "Empresa de tecnologia B2B aplicada à indústria, especializada em automação, plataformas digitais e dados.",
+    "logo": "src/resources/img/logotipo.png",
+    "email": "mailto:contato@kingdomsolutions.com",
+    "telephone": "+55-11-99999-8888",
+    "areaServed": "BR"
+  }
+  </script>
 </head>
 <body>
 <header class="header">
   <div class="container nav">
-    <!-- LOGO ATUALIZADA AQUI -->
-    <a class="brand" href="index.html" aria-label="KINGDOM Home" style="display: flex; align-items: center;">
-      <img src="src/images/kingdom-logo.png" alt="KINGDOM Solutions" style="max-height: 80px; width: auto;">
+    <a class="brand" href="index.html" aria-label="KINGDOM Technology & Solutions — página inicial">
+      <picture>
+        <source srcset="src/resources/img/logotipo.png" type="image/webp">
+        <img class="brand-mark" src="src/resources/img/logotipo.png" width="240" height="251" alt="" loading="eager" decoding="async">
+      </picture>
+      <span class="wordmark">KINGDOM</span>
+      <small>TECHNOLOGY &amp; SOLUTIONS</small>
     </a>
-    <button class="menu" aria-label="Abrir menu" aria-expanded="false"><span></span><span></span><span></span></button>
-    <nav class="links" aria-label="Navegação principal">
+    <button class="menu" type="button" aria-label="Abrir menu" aria-expanded="false" aria-controls="menu-principal">
+      <span></span><span></span><span></span>
+    </button>
+    <nav id="menu-principal" class="links" aria-label="Navegação principal">
       <a class="active" href="index.html">Home</a>
       <a href="quem-somos.html">Quem somos</a>
     </nav>
@@ -31,7 +70,7 @@
       <div class="hero-copy reveal">
         <p class="kicker">TECNOLOGIA B2B APLICADA À INDÚSTRIA</p>
         <h1>Entender a indústria.<br><em>Construir soluções.</em></h1>
-        <p class="lead">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Identificamos gargalos e desenvolvemos a tecnologia necessária para resolvê-los.</p>
+        <p class="lead">Identificamos gargalos e desenvolvemos a tecnologia necessária para resolvê-los.</p>
         <div class="actions">
           <a class="button button-accent" href="#solucoes">Conheça nossas soluções <b>↗</b></a>
           <a class="button button-outline" href="quem-somos.html">Quem somos</a>
@@ -56,12 +95,12 @@
         <div class="d-shape d1"></div>
         <div class="d-shape d2"></div>
         <div class="d-shape d3"></div>
-        <strong>K</strong>
+        <strong>KS</strong>
       </div>
       <div class="reveal">
         <p class="kicker">QUEM SOMOS</p>
         <h2>Tecnologia construída a partir do <em>problema real.</em></h2>
-        <p class="copy">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. A KINGDOM identifica problemas e gargalos presentes na operação do cliente e desenvolve soluções tecnológicas adequadas à necessidade encontrada.</p>
+        <p class="copy">A KINGDOM identifica problemas e gargalos presentes na operação do cliente e desenvolve soluções tecnológicas adequadas à necessidade encontrada.</p>
         <p class="copy">A solução deve se adaptar ao problema, e não o problema ao software.</p>
         <div class="stats">
           <div><b>+00</b><span>Projetos</span></div>
@@ -80,7 +119,7 @@
           <p class="kicker">SOLUÇÕES</p>
           <h2>Construímos tecnologia<br><em>sob medida.</em></h2>
         </div>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Soluções desenvolvidas de acordo com cada desafio operacional.</p>
+        <p>Soluções desenvolvidas de acordo com cada desafio operacional.</p>
       </div>
       <div class="cards">
         <article class="card reveal"><span>01</span><i>⌁</i><h3>Automação e processos</h3><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><a href="#contato">Saiba mais ↗</a></article>
@@ -113,7 +152,7 @@
         <h2>Fale com Nossos Especialistas</h2>
         <p>Receba uma análise preliminar sem compromisso e saiba como podemos resolver os problemas do seu negócio.</p>
       </div>
-      
+
       <div class="contact-grid">
         <div class="contact-info">
           <div class="info-item">
@@ -142,19 +181,19 @@
         <form onsubmit="event.preventDefault(); alert('Mensagem enviada com sucesso! A equipe KINGDOM entrará em contato.');">
           <div class="form-group">
             <label for="nome">Nome Completo</label>
-            <input type="text" id="nome" placeholder="Seu nome ou do executivo responsável" required>
+            <input type="text" id="nome" name="nome" autocomplete="name" placeholder="Seu nome ou do executivo responsável" required>
           </div>
           <div class="form-group">
             <label for="empresa">Nome da Empresa</label>
-            <input type="text" id="empresa" placeholder="Sua empresa" required>
+            <input type="text" id="empresa" name="empresa" autocomplete="organization" placeholder="Sua empresa" required>
           </div>
           <div class="form-group">
             <label for="email">E-mail Corporativo</label>
-            <input type="email" id="email" placeholder="nome@suaempresa.com" required>
+            <input type="email" id="email" name="email" autocomplete="email" placeholder="nome@suaempresa.com" required>
           </div>
           <div class="form-group">
             <label for="mensagem">Descrição Resumida do Problema</label>
-            <textarea id="mensagem" rows="4" placeholder="Conte-nos brevemente o principal desafio operacional ou estratégico que enfrenta hoje..." required></textarea>
+            <textarea id="mensagem" name="mensagem" rows="4" placeholder="Conte-nos brevemente o principal desafio operacional ou estratégico que enfrenta hoje..." required></textarea>
           </div>
           <button type="submit" class="button button-accent" style="width: 100%; border: none; cursor: pointer;">Enviar Solicitação</button>
         </form>
@@ -166,10 +205,14 @@
 <footer class="footer">
   <div class="container footer-grid">
     <div>
-      <!-- LOGO ATUALIZADA AQUI NO RODAPÉ -->
-      <div class="footer-logo">
-        <img src="Logo atualizada.png" alt="KINGDOM Solutions" style="max-height: 80px; width: auto; margin-bottom: 10px;">
-      </div>
+      <a class="brand footer-brand" href="index.html" aria-label="KINGDOM Technology & Solutions — página inicial">
+        <picture>
+          <source srcset="src/resources/img/logotipo.png" type="image/webp">
+          <img class="brand-mark" src="src/resources/img/logotipo.png" width="240" height="251" alt="" loading="lazy" decoding="async">
+        </picture>
+        <span class="wordmark">KINGDOM</span>
+      </a>
+      <p>Technology &amp; Solutions</p>
     </div>
     <div>
       <h4>Navegação</h4>
@@ -197,6 +240,6 @@
   </div>
 </footer>
 
-<script src="src/scripts/main.j"></script>
+<script src="src/js/main.js" defer></script>
 </body>
 </html>
