@@ -21,9 +21,7 @@ O projeto consiste em uma landing page institucional com foco em fortalecer a pr
 - **HTML5**: estrutura e conteúdo da interface
 - **CSS3**: estilização, responsividade e layout visual
 - **JavaScript**: interações e comportamento da página
-- **Font Awesome**: ícones de interface
 - **Git**: versionamento do projeto
-- **Servidor local**: execução via Python ou qualquer servidor estático
 
 ## 📁 Estrutura do Projeto
 
@@ -61,30 +59,6 @@ institucional-kingdom/
 - informações de contato
 - rede social / canais de comunicação
 
-### Alterar estilos
-O layout principal está em:
-- `style.css`
-- `src/styles/style.css`
-
-### Alterar comportamento
-Os scripts de interação estão em:
-- `src/js/main.js`
-
-## 🔧 Personalização
-
-Para adaptar o projeto a outra identidade visual ou empresa, os pontos principais que podem ser alterados são:
-
-- textos e mensagens institucionais
-- logo e assets de imagem
-- cores primárias/acentos
-- links de contato
-- textos de serviços e diferenciais
-
-
 ## 📧 Contato
 
 Para dúvidas, sugestões ou oportunidades de parceria, utilize os canais disponíveis na página de contato do site.
-
----
-
-**Status**: Em desenvolvimento 🚧
